@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://www.datapower.com/schemas/management" elementFormDefault="qualified" targetNamespace="http://www.datapower.com/schemas/management" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="3.0.xsd3.wsdl" />
+  <xsd:simpleType name="export-format">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ZIP" />
+      <xsd:enumeration value="XML" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="base64-binary">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:base64Binary" />
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="log-entry">
+    <xsd:sequence>
+      <xsd:any maxOccurs="unbounded" processContents="skip" />
+    </xsd:sequence>
+    <xsd:attribute name="serial" type="xsd:integer" />
+    <xsd:attribute name="domain" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:element name="request">
+    <xsd:complexType>
+      <xsd:choice>
+        <xsd:element name="get-samlart">
+          <xsd:complexType>
+            <xsd:attribute name="user" type="xsd:string" />
+            <xsd:attribute name="password" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-status">
+          <xsd:complexType>
+            <xsd:attribute name="class" type="tns:StatusEnum" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-config">
+          <xsd:complexType>
+            <xsd:attribute name="class" type="tns:ConfigEnum" />
+            <xsd:attribute name="name" type="xsd:string" />
+            <xsd:attribute name="recursive" type="xsd:boolean" />
+            <xsd:attribute name="persisted" type="xsd:boolean" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-diff">
+          <xsd:complexType>
+            <xsd:choice>
+              <xsd:sequence>
+                <xsd:element name="from">
+                  <xsd:complexType>
+                    <xsd:choice>
+                      <xsd:element name="export" type="tns:base64-binary" />
+                      <xsd:element name="backup" type="tns:base64-binary" />
+                      <xsd:element name="object">
+                        <xsd:complexType>
+                          <xsd:attribute name="class" type="xsd:string" />
+                          <xsd:attribute name="name" type="xsd:string" />
+                          <xsd:attribute name="recursive" type="xsd:boolean" />
+                          <xsd:attribute name="persisted" type="xsd:boolean" />
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:choice>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="to">
+                  <xsd:complexType>
+                    <xsd:choice>
+                      <xsd:element name="export" type="tns:base64-binary" />
+                      <xsd:element name="backup" type="tns:base64-binary" />
+                      <xsd:element name="object">
+                        <xsd:complexType>
+                          <xsd:attribute name="class" type="xsd:string" />
+                          <xsd:attribute name="name" type="xsd:string" />
+                          <xsd:attribute name="recursive" type="xsd:boolean" />
+                          <xsd:attribute name="persisted" type="xsd:boolean" />
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:choice>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+              <xsd:element name="object">
+                <xsd:complexType>
+                  <xsd:attribute name="class" type="xsd:string" />
+                  <xsd:attribute name="name" type="xsd:string" />
+                  <xsd:attribute name="recursive" type="xsd:boolean" />
+                  <xsd:attribute name="from-persisted" type="xsd:boolean" />
+                  <xsd:attribute name="to-persisted" type="xsd:boolean" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-conformance-report">
+          <xsd:complexType>
+            <xsd:attribute name="class" type="tns:ConfigEnum" />
+            <xsd:attribute name="name" type="xsd:string" />
+            <xsd:attribute name="profile" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-log">
+          <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-filestore">
+          <xsd:complexType>
+            <xsd:attribute name="location" type="tns:filestore-location" />
+            <xsd:attribute name="annotated" type="xsd:boolean" />
+            <xsd:attribute name="layout-only" type="xsd:boolean" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="get-file">
+          <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="set-file">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:base64Binary">
+                <xsd:attribute name="name" type="xsd:string" use="optional" />
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="do-export">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="user-comment" type="xsd:string" />
+              <xsd:element minOccurs="1" maxOccurs="unbounded" name="object">
+                <xsd:complexType>
+                  <xsd:attribute name="class" type="xsd:string" />
+                  <xsd:attribute name="name" type="xsd:string" />
+                  <xsd:attribute name="ref-objects" type="xsd:boolean" />
+                  <xsd:attribute name="ref-files" type="xsd:boolean" />
+                  <xsd:attribute name="include-debug" type="xsd:boolean" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="format" type="tns:export-format" />
+            <xsd:attribute name="all-files" type="xsd:boolean" />
+            <xsd:attribute name="persisted" type="xsd:boolean" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="do-import">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="1" name="input-file" type="tns:base64-binary" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="object">
+                <xsd:complexType>
+                  <xsd:attribute name="class" type="xsd:string" />
+                  <xsd:attribute name="name" type="xsd:string" />
+                  <xsd:attribute name="overwrite" type="xsd:boolean" />
+                  <xsd:attribute name="import-debug" type="xsd:boolean" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="file">
+                <xsd:complexType>
+                  <xsd:attribute name="name" type="xsd:string" />
+                  <xsd:attribute name="overwrite" type="xsd:boolean" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="source-type" type="tns:export-format" />
+            <xsd:attribute name="dry-run" type="xsd:boolean" />
+            <xsd:attribute name="overwrite-files" type="xsd:boolean" />
+            <xsd:attribute name="overwrite-objects" type="xsd:boolean" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="do-backup">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="user-comment" type="xsd:string" />
+              <xsd:element minOccurs="1" maxOccurs="unbounded" name="domain">
+                <xsd:complexType>
+                  <xsd:attribute name="name" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="format" type="tns:export-format" />
+            <xsd:attribute name="persisted" type="xsd:boolean" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="do-restore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="1" name="input-file" type="tns:base64-binary" />
+              <xsd:element minOccurs="1" maxOccurs="unbounded" name="domain">
+                <xsd:complexType>
+                  <xsd:attribute name="name" type="xsd:string" />
+                  <xsd:attribute name="import-domain" type="xsd:boolean" />
+                  <xsd:attribute name="reset-domain" type="xsd:boolean" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="source-type" type="tns:export-format" />
+            <xsd:attribute name="dry-run" type="xsd:boolean" />
+            <xsd:attribute name="overwrite-files" type="xsd:boolean" />
+            <xsd:attribute name="overwrite-objects" type="xsd:boolean" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="do-action" type="tns:AnyActionElement" />
+        <xsd:element name="set-config" type="tns:AnyConfigElement" />
+        <xsd:element name="modify-config" type="tns:AnyModifyElement" />
+        <xsd:element name="del-config" type="tns:AnyDeleteElement" />
+      </xsd:choice>
+      <xsd:attribute name="domain" type="xsd:string" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+        <xsd:choice>
+          <xsd:element name="status" type="tns:AnyStatusElement" />
+          <xsd:element name="config" type="tns:AnyConfigElement" />
+          <xsd:element name="diff">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="conformance-report">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="log">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="log-entry" type="tns:log-entry" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="filestore">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="file" type="tns:file" />
+          <xsd:element name="import">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:any maxOccurs="unbounded" processContents="skip" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="result">
+            <xsd:complexType mixed="true">
+              <xsd:sequence>
+                <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

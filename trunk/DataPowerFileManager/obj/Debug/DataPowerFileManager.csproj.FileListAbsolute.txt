@@ -1,0 +1,14 @@
+C:\Documents and Settings\byron\Local Settings\Application Data\Temporary Projects\DataPowerFileManager\bin\Debug\DataPowerFileManager.exe.config
+C:\Documents and Settings\byron\Local Settings\Application Data\Temporary Projects\DataPowerFileManager\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\byron\Local Settings\Application Data\Temporary Projects\DataPowerFileManager\obj\Debug\DataPowerFileManager.Form1.resources
+C:\Documents and Settings\byron\Local Settings\Application Data\Temporary Projects\DataPowerFileManager\obj\Debug\DataPowerFileManager.Properties.Resources.resources
+C:\Documents and Settings\byron\Local Settings\Application Data\Temporary Projects\DataPowerFileManager\obj\Debug\DataPowerFileManager.csproj.GenerateResource.Cache
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Debug\DataPowerFileManager.exe.config
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Debug\DataPowerFileManager.Form1.resources
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Debug\DataPowerFileManager.Properties.Resources.resources
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Debug\DataPowerFileManager.csproj.GenerateResource.Cache
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Debug\DataPowerFileManager.exe
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Debug\DataPowerFileManager.pdb
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Debug\DataPowerFileManager.exe
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Debug\DataPowerFileManager.pdb

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DataPowerFileManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DataPowerFileManager_WebReference_app_mgmt_protocol" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://10.0.20.20:5550/service/mgmt/amp/1.0</Value>
+    </Setting>
+    <Setting Name="DataPowerFileManager_com_prolifics_dpowerxi50_xml_mgmt" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://dpowerxi50.prolifics.com:8080/service/mgmt/3.0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
