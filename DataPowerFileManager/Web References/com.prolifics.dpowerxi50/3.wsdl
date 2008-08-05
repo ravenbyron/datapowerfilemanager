@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://www.datapower.com/schemas/management/wsdl" targetNamespace="http://www.datapower.com/schemas/management/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlhttp="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:exset="http://exslt.org/sets" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema xmlns:tns="http://www.datapower.com/schemas/management" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:wsdltns="http://www.datapower.com/schemas/management/wsdl" targetNamespace="http://www.datapower.com/schemas/management">
+      <xsd:include schemaLocation="3.0.xsd2.wsdl" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="request">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/management" name="body" element="xsns:request" />
+  </wsdl:message>
+  <wsdl:message name="response">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/management" name="body" element="xsns:response" />
+  </wsdl:message>
+  <wsdl:portType name="xml-mgmt">
+    <wsdl:operation name="operation">
+      <wsdl:input name="operationRequest" message="ns0:request" />
+      <wsdl:output name="operationResponse" message="ns0:response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="xml-mgmt-soap" type="ns0:xml-mgmt">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="operation">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="operationRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="operationResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="xml-mgmt">
+    <wsdl:port name="xml-mgmt" binding="ns0:xml-mgmt-soap">
+      <soap11:address location="http://dpowerxi50.prolifics.com:8080/service/mgmt/3.0" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

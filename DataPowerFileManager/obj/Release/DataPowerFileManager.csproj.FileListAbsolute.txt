@@ -1,0 +1,11 @@
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Release\DataPowerFileManager.exe.config
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Release\DataPowerFileManager.exe
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Release\DataPowerFileManager.pdb
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\DataPowerFileManager.Form1.resources
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\DataPowerFileManager.Properties.Resources.resources
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\DataPowerFileManager.csproj.GenerateResource.Cache
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\DataPowerFileManager.exe
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\DataPowerFileManager.pdb
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\bin\Release\DataPowerFileManager.XmlSerializers.dll
+C:\Documents and Settings\byron\My Documents\Visual Studio 2008\Projects\DataPowerFileManager\DataPowerFileManager\obj\Release\DataPowerFileManager.XmlSerializers.dll

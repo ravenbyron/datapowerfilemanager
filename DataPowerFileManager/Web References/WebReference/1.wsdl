@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://www.datapower.com/schemas/appliance/management/1.0/wsdl" targetNamespace="http://www.datapower.com/schemas/appliance/management/1.0/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlhttp="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:exset="http://exslt.org/sets" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema xmlns:tns="http://www.datapower.com/schemas/appliance/management/1.0" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:wsdltns="http://www.datapower.com/schemas/appliance/management/1.0/wsdl" targetNamespace="http://www.datapower.com/schemas/appliance/management/1.0">
+      <xsd:include schemaLocation="1.0.xsd1.wsdl" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CompareConfigRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:CompareConfigRequest" />
+  </wsdl:message>
+  <wsdl:message name="CompareConfigResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:CompareConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDomainRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:DeleteDomainRequest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDomainResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:DeleteDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetCryptoArtifactsRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetCryptoArtifactsRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetCryptoArtifactsResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetCryptoArtifactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceInfoRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDeviceInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceInfoResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDeviceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceSettingsRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDeviceSettingsRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceSettingsResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDeviceSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainConfigRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDomainConfigRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainConfigResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDomainConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainListRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDomainListRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainListResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDomainListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainStatusRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDomainStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainStatusResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetDomainStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorReportRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetErrorReportRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorReportResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetErrorReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetLogRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetLogResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetTokenRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:GetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:PingRequest" />
+  </wsdl:message>
+  <wsdl:message name="PingResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="RebootRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:RebootRequest" />
+  </wsdl:message>
+  <wsdl:message name="RebootResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:RebootResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestartDomainRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:RestartDomainRequest" />
+  </wsdl:message>
+  <wsdl:message name="RestartDomainResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:RestartDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDeviceSettingsRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetDeviceSettingsRequest" />
+  </wsdl:message>
+  <wsdl:message name="SetDeviceSettingsResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetDeviceSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDomainConfigRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetDomainConfigRequest" />
+  </wsdl:message>
+  <wsdl:message name="SetDomainConfigResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetDomainConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFileRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetFileRequest" />
+  </wsdl:message>
+  <wsdl:message name="SetFileResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFirmwareRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetFirmwareRequest" />
+  </wsdl:message>
+  <wsdl:message name="SetFirmwareResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SetFirmwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartDomainRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:StartDomainRequest" />
+  </wsdl:message>
+  <wsdl:message name="StartDomainResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:StartDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopDomainRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:StopDomainRequest" />
+  </wsdl:message>
+  <wsdl:message name="StopDomainResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:StopDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SubscribeRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeRequest">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:UnsubscribeRequest" />
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeResponse">
+    <wsdl:part xmlns:xsns="http://www.datapower.com/schemas/appliance/management/1.0" name="body" element="xsns:UnsubscribeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="app-mgmt-protocol">
+    <wsdl:operation name="CompareConfig">
+      <wsdl:input name="CompareConfigRequest" message="ns0:CompareConfigRequest" />
+      <wsdl:output name="CompareConfigResponse" message="ns0:CompareConfigResponse" />
+      <wsdl:fault name="CompareConfigFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <wsdl:input name="DeleteDomainRequest" message="ns0:DeleteDomainRequest" />
+      <wsdl:output name="DeleteDomainResponse" message="ns0:DeleteDomainResponse" />
+      <wsdl:fault name="DeleteDomainFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCryptoArtifacts">
+      <wsdl:input name="GetCryptoArtifactsRequest" message="ns0:GetCryptoArtifactsRequest" />
+      <wsdl:output name="GetCryptoArtifactsResponse" message="ns0:GetCryptoArtifactsResponse" />
+      <wsdl:fault name="GetCryptoArtifactsFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceInfo">
+      <wsdl:input name="GetDeviceInfoRequest" message="ns0:GetDeviceInfoRequest" />
+      <wsdl:output name="GetDeviceInfoResponse" message="ns0:GetDeviceInfoResponse" />
+      <wsdl:fault name="GetDeviceInfoFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceSettings">
+      <wsdl:input name="GetDeviceSettingsRequest" message="ns0:GetDeviceSettingsRequest" />
+      <wsdl:output name="GetDeviceSettingsResponse" message="ns0:GetDeviceSettingsResponse" />
+      <wsdl:fault name="GetDeviceSettingsFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainConfig">
+      <wsdl:input name="GetDomainConfigRequest" message="ns0:GetDomainConfigRequest" />
+      <wsdl:output name="GetDomainConfigResponse" message="ns0:GetDomainConfigResponse" />
+      <wsdl:fault name="GetDomainConfigFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainList">
+      <wsdl:input name="GetDomainListRequest" message="ns0:GetDomainListRequest" />
+      <wsdl:output name="GetDomainListResponse" message="ns0:GetDomainListResponse" />
+      <wsdl:fault name="GetDomainListFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainStatus">
+      <wsdl:input name="GetDomainStatusRequest" message="ns0:GetDomainStatusRequest" />
+      <wsdl:output name="GetDomainStatusResponse" message="ns0:GetDomainStatusResponse" />
+      <wsdl:fault name="GetDomainStatusFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorReport">
+      <wsdl:input name="GetErrorReportRequest" message="ns0:GetErrorReportRequest" />
+      <wsdl:output name="GetErrorReportResponse" message="ns0:GetErrorReportResponse" />
+      <wsdl:fault name="GetErrorReportFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <wsdl:input name="GetLogRequest" message="ns0:GetLogRequest" />
+      <wsdl:output name="GetLogResponse" message="ns0:GetLogResponse" />
+      <wsdl:fault name="GetLogFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <wsdl:input name="GetTokenRequest" message="ns0:GetTokenRequest" />
+      <wsdl:output name="GetTokenResponse" message="ns0:GetTokenResponse" />
+      <wsdl:fault name="GetTokenFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input name="PingRequest" message="ns0:PingRequest" />
+      <wsdl:output name="PingResponse" message="ns0:PingResponse" />
+      <wsdl:fault name="PingFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="Reboot">
+      <wsdl:input name="RebootRequest" message="ns0:RebootRequest" />
+      <wsdl:output name="RebootResponse" message="ns0:RebootResponse" />
+      <wsdl:fault name="RebootFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartDomain">
+      <wsdl:input name="RestartDomainRequest" message="ns0:RestartDomainRequest" />
+      <wsdl:output name="RestartDomainResponse" message="ns0:RestartDomainResponse" />
+      <wsdl:fault name="RestartDomainFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDeviceSettings">
+      <wsdl:input name="SetDeviceSettingsRequest" message="ns0:SetDeviceSettingsRequest" />
+      <wsdl:output name="SetDeviceSettingsResponse" message="ns0:SetDeviceSettingsResponse" />
+      <wsdl:fault name="SetDeviceSettingsFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDomainConfig">
+      <wsdl:input name="SetDomainConfigRequest" message="ns0:SetDomainConfigRequest" />
+      <wsdl:output name="SetDomainConfigResponse" message="ns0:SetDomainConfigResponse" />
+      <wsdl:fault name="SetDomainConfigFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFile">
+      <wsdl:input name="SetFileRequest" message="ns0:SetFileRequest" />
+      <wsdl:output name="SetFileResponse" message="ns0:SetFileResponse" />
+      <wsdl:fault name="SetFileFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFirmware">
+      <wsdl:input name="SetFirmwareRequest" message="ns0:SetFirmwareRequest" />
+      <wsdl:output name="SetFirmwareResponse" message="ns0:SetFirmwareResponse" />
+      <wsdl:fault name="SetFirmwareFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="StartDomain">
+      <wsdl:input name="StartDomainRequest" message="ns0:StartDomainRequest" />
+      <wsdl:output name="StartDomainResponse" message="ns0:StartDomainResponse" />
+      <wsdl:fault name="StartDomainFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="StopDomain">
+      <wsdl:input name="StopDomainRequest" message="ns0:StopDomainRequest" />
+      <wsdl:output name="StopDomainResponse" message="ns0:StopDomainResponse" />
+      <wsdl:fault name="StopDomainFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input name="SubscribeRequest" message="ns0:SubscribeRequest" />
+      <wsdl:output name="SubscribeResponse" message="ns0:SubscribeResponse" />
+      <wsdl:fault name="SubscribeFault" message="ns0:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input name="UnsubscribeRequest" message="ns0:UnsubscribeRequest" />
+      <wsdl:output name="UnsubscribeResponse" message="ns0:UnsubscribeResponse" />
+      <wsdl:fault name="UnsubscribeFault" message="ns0:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="app-mgmt-protocol-soap" type="ns0:app-mgmt-protocol">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CompareConfig">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="CompareConfigRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CompareConfigResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CompareConfigFault">
+        <soap11:fault use="literal" name="CompareConfigFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="DeleteDomainRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteDomainResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DeleteDomainFault">
+        <soap11:fault use="literal" name="DeleteDomainFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCryptoArtifacts">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetCryptoArtifactsRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCryptoArtifactsResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetCryptoArtifactsFault">
+        <soap11:fault use="literal" name="GetCryptoArtifactsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceInfo">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetDeviceInfoRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDeviceInfoResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDeviceInfoFault">
+        <soap11:fault use="literal" name="GetDeviceInfoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceSettings">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetDeviceSettingsRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDeviceSettingsResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDeviceSettingsFault">
+        <soap11:fault use="literal" name="GetDeviceSettingsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainConfig">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetDomainConfigRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDomainConfigResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDomainConfigFault">
+        <soap11:fault use="literal" name="GetDomainConfigFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainList">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetDomainListRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDomainListResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDomainListFault">
+        <soap11:fault use="literal" name="GetDomainListFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainStatus">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetDomainStatusRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDomainStatusResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetDomainStatusFault">
+        <soap11:fault use="literal" name="GetDomainStatusFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorReport">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetErrorReportRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetErrorReportResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetErrorReportFault">
+        <soap11:fault use="literal" name="GetErrorReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetLogRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLogResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetLogFault">
+        <soap11:fault use="literal" name="GetLogFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="GetTokenRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetTokenResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetTokenFault">
+        <soap11:fault use="literal" name="GetTokenFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="PingRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PingResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PingFault">
+        <soap11:fault use="literal" name="PingFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reboot">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RebootRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RebootResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RebootFault">
+        <soap11:fault use="literal" name="RebootFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RestartDomain">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="RestartDomainRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RestartDomainResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RestartDomainFault">
+        <soap11:fault use="literal" name="RestartDomainFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetDeviceSettings">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="SetDeviceSettingsRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetDeviceSettingsResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SetDeviceSettingsFault">
+        <soap11:fault use="literal" name="SetDeviceSettingsFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetDomainConfig">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="SetDomainConfigRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetDomainConfigResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SetDomainConfigFault">
+        <soap11:fault use="literal" name="SetDomainConfigFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetFile">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="SetFileRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetFileResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SetFileFault">
+        <soap11:fault use="literal" name="SetFileFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetFirmware">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="SetFirmwareRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetFirmwareResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SetFirmwareFault">
+        <soap11:fault use="literal" name="SetFirmwareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StartDomain">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="StartDomainRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartDomainResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StartDomainFault">
+        <soap11:fault use="literal" name="StartDomainFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StopDomain">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="StopDomainRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StopDomainResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StopDomainFault">
+        <soap11:fault use="literal" name="StopDomainFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="SubscribeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SubscribeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SubscribeFault">
+        <soap11:fault use="literal" name="SubscribeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap11:operation soapAction="" style="document" />
+      <wsdl:input name="UnsubscribeRequest">
+        <soap11:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UnsubscribeResponse">
+        <soap11:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsubscribeFault">
+        <soap11:fault use="literal" name="UnsubscribeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="app-mgmt-protocol">
+    <wsdl:port name="app-mgmt-protocol" binding="ns0:app-mgmt-protocol-soap">
+      <soap11:address location="http://dpowerxi50.prolifics.com:8080/service/mgmt/amp/1.0" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

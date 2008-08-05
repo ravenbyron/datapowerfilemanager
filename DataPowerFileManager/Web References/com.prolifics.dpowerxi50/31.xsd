@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://www.datapower.com/schemas/management" targetNamespace="http://www.datapower.com/schemas/management" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="dmEmptyElement">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="0" fixed="true" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmString">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmUInt16">
+    <xsd:restriction base="xsd:unsignedShort" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmUInt32">
+    <xsd:restriction base="xsd:unsignedInt" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmURL">
+    <xsd:restriction base="xsd:anyURI" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmAccessPolicy">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmAdminState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="enabled" />
+      <xsd:enumeration value="disabled" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmCounter32">
+    <xsd:restriction base="tns:dmUInt32" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmEventCode">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmEventCodeMatch">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmWSMIdentifier">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmFormattedText">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmFSDirectory">
+    <xsd:restriction base="tns:dmURL" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmFSFile">
+    <xsd:restriction base="tns:dmURL" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmIPHostAddress">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmHostname">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmLocalIPHostAddress">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmIPNetAddress">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]{1,2}" />
+      <xsd:pattern value="[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+ [0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmIPPort">
+    <xsd:restriction base="tns:dmUInt16" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmMACAddress">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="([0-9a-fA-F]{1,2}:){5}[0-9a-fA-F]{1,2}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmObjectClass">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmObjectName">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmOpState">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="up" />
+      <xsd:enumeration value="down" />
+      <xsd:enumeration value="PendingUp" />
+      <xsd:enumeration value="PendingDown" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmPCRE">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:complexType name="dmReference">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="class" type="xsd:string" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="dmTimeInterval">
+    <xsd:restriction base="tns:dmUInt32" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmTimeIntervalHundredths">
+    <xsd:restriction base="tns:dmUInt32" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmTimeIntervalMillis">
+    <xsd:restriction base="tns:dmUInt32" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmTimestamp">
+    <xsd:restriction base="tns:dmUInt32" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmTimeOfDay">
+    <xsd:restriction base="tns:dmString" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmToggle">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="on" />
+      <xsd:enumeration value="off" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="dmXPathExpr">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="dmXMLLocalName">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:complexType name="file">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:base64Binary">
+        <xsd:attribute name="name" type="xsd:string" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="filestore-location">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="local:" />
+      <xsd:enumeration value="store:" />
+      <xsd:enumeration value="export:" />
+      <xsd:enumeration value="cert:" />
+      <xsd:enumeration value="sharedcert:" />
+      <xsd:enumeration value="pubcert:" />
+      <xsd:enumeration value="image:" />
+      <xsd:enumeration value="config:" />
+      <xsd:enumeration value="logtemp:" />
+      <xsd:enumeration value="logstore:" />
+      <xsd:enumeration value="temporary:" />
+      <xsd:enumeration value="tasktemplates:" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="dmDelConfig">
+    <xsd:sequence />
+    <xsd:attribute name="name" use="required" />
+  </xsd:complexType>
+  <xsd:attributeGroup name="ConfigAttributes">
+    <xsd:attribute name="name" type="xsd:string" />
+    <xsd:attribute name="local" type="xsd:boolean" />
+    <xsd:attribute name="intrinsic" type="xsd:boolean" />
+    <xsd:attribute name="read-only" type="xsd:boolean" />
+    <xsd:attribute name="external" type="xsd:boolean" />
+  </xsd:attributeGroup>
+</xsd:schema>
